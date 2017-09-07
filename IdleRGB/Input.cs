@@ -9,6 +9,8 @@ namespace IdleRGB
 {
     class Input
     {
+        // GIT TEST
+
         KeyboardInput keyboard;
         MouseInput mouse;
         LedChanger idle;
