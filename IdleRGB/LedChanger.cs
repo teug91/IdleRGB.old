@@ -17,6 +17,7 @@ namespace IdleRGB
         CorsairKeyboard corsairKeyboard;
         CorsairMouse corsairMouse;
 
+        // Color settings.
         Color stopColor;
         Color prevColor;
         Color playPauseColor;
@@ -34,13 +35,13 @@ namespace IdleRGB
             nextColor = Properties.Settings.Default.nextColor;
             muteColor = Properties.Settings.Default.muteColor;
 
-            initializeCueSDK();
+            InitializeCueSDK();
         }
 
         /// <summary>
         /// Initializes CUE SDK.
         /// </summary>
-        void initializeCueSDK()
+        void InitializeCueSDK()
         {
             try
             {
@@ -70,8 +71,8 @@ namespace IdleRGB
         /// <summary>
         /// Changes all LED colors except media.
         /// </summary>
-        /// <param name="backgroundColor"></param>
-        public void changeLeds(Color backgroundColor)
+        /// <param name="backgroundColor">The <see cref="System.Drawing.Color"/> for the background.</param>
+        public void ChangeLeds(Color backgroundColor)
         {
             corsairKeyboard.Brush = new SolidColorBrush(backgroundColor);
 
@@ -101,9 +102,9 @@ namespace IdleRGB
         }
 
         /// <summary>
-        /// Resets all LEDS.
+        /// Resets all LEDs.
         /// </summary>
-        public void resetLeds()
+        public void ResetLeds()
         {
             CueSDK.Reinitialize();
         }

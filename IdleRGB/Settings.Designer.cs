@@ -29,131 +29,144 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Settings));
-            this.hoursTextBox = new System.Windows.Forms.TextBox();
             this.saveButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.minutesTextBox = new System.Windows.Forms.TextBox();
-            this.secondsTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.hoursBox = new System.Windows.Forms.ComboBox();
+            this.timeLabel = new System.Windows.Forms.Label();
+            this.secondsBox = new System.Windows.Forms.ComboBox();
+            this.minutesBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // hoursTextBox
-            // 
-            this.hoursTextBox.BackColor = System.Drawing.Color.Silver;
-            this.hoursTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.hoursTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hoursTextBox.Location = new System.Drawing.Point(33, 42);
-            this.hoursTextBox.MaxLength = 2;
-            this.hoursTextBox.Name = "hoursTextBox";
-            this.hoursTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.hoursTextBox.ShortcutsEnabled = false;
-            this.hoursTextBox.Size = new System.Drawing.Size(25, 26);
-            this.hoursTextBox.TabIndex = 0;
-            this.hoursTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.hoursTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // saveButton
             // 
-            this.saveButton.BackColor = System.Drawing.Color.DimGray;
+            this.saveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.saveButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveButton.Location = new System.Drawing.Point(33, 105);
+            this.saveButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveButton.ForeColor = System.Drawing.Color.White;
+            this.saveButton.Location = new System.Drawing.Point(382, 229);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 35);
-            this.saveButton.TabIndex = 4;
+            this.saveButton.TabIndex = 0;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = false;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // cancelButton
             // 
-            this.cancelButton.BackColor = System.Drawing.Color.DimGray;
-            this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelButton.Location = new System.Drawing.Point(140, 105);
+            this.cancelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.cancelButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelButton.ForeColor = System.Drawing.Color.White;
+            this.cancelButton.Location = new System.Drawing.Point(474, 229);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 35);
-            this.cancelButton.TabIndex = 5;
+            this.cancelButton.TabIndex = 1;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = false;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
-            // 
-            // minutesTextBox
-            // 
-            this.minutesTextBox.BackColor = System.Drawing.Color.Silver;
-            this.minutesTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minutesTextBox.Location = new System.Drawing.Point(98, 42);
-            this.minutesTextBox.MaxLength = 2;
-            this.minutesTextBox.Name = "minutesTextBox";
-            this.minutesTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.minutesTextBox.ShortcutsEnabled = false;
-            this.minutesTextBox.Size = new System.Drawing.Size(25, 26);
-            this.minutesTextBox.TabIndex = 2;
-            this.minutesTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.minutesTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
-            // 
-            // secondsTextBox
-            // 
-            this.secondsTextBox.BackColor = System.Drawing.Color.Silver;
-            this.secondsTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.secondsTextBox.Location = new System.Drawing.Point(167, 42);
-            this.secondsTextBox.MaxLength = 2;
-            this.secondsTextBox.Name = "secondsTextBox";
-            this.secondsTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.secondsTextBox.ShortcutsEnabled = false;
-            this.secondsTextBox.Size = new System.Drawing.Size(25, 26);
-            this.secondsTextBox.TabIndex = 3;
-            this.secondsTextBox.Text = "30";
-            this.secondsTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.secondsTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
+            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(64, 48);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(125, 73);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.label1.Size = new System.Drawing.Size(28, 20);
+            this.label1.Size = new System.Drawing.Size(28, 30);
             this.label1.TabIndex = 5;
-            this.label1.Text = "h";
+            this.label1.Text = ":";
             // 
-            // label2
+            // label4
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(129, 48);
-            this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.label2.Size = new System.Drawing.Size(32, 20);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "m";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(245, 73);
+            this.label4.Name = "label4";
+            this.label4.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.label4.Size = new System.Drawing.Size(28, 30);
+            this.label4.TabIndex = 10;
+            this.label4.Text = ":";
             // 
-            // label3
+            // hoursBox
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(198, 48);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(17, 20);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "s";
+            this.hoursBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(63)))), ((int)(((byte)(72)))));
+            this.hoursBox.CausesValidation = false;
+            this.hoursBox.DropDownHeight = 160;
+            this.hoursBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.hoursBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.hoursBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hoursBox.ForeColor = System.Drawing.Color.White;
+            this.hoursBox.FormattingEnabled = true;
+            this.hoursBox.IntegralHeight = false;
+            this.hoursBox.ItemHeight = 21;
+            this.hoursBox.Location = new System.Drawing.Point(35, 73);
+            this.hoursBox.Name = "hoursBox";
+            this.hoursBox.Size = new System.Drawing.Size(74, 29);
+            this.hoursBox.TabIndex = 2;
+            // 
+            // timeLabel
+            // 
+            this.timeLabel.AutoSize = true;
+            this.timeLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeLabel.ForeColor = System.Drawing.Color.White;
+            this.timeLabel.Location = new System.Drawing.Point(25, 20);
+            this.timeLabel.Name = "timeLabel";
+            this.timeLabel.Size = new System.Drawing.Size(163, 30);
+            this.timeLabel.TabIndex = 0;
+            this.timeLabel.Text = "Time before idle";
+            // 
+            // secondsBox
+            // 
+            this.secondsBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(63)))), ((int)(((byte)(72)))));
+            this.secondsBox.CausesValidation = false;
+            this.secondsBox.DropDownHeight = 160;
+            this.secondsBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.secondsBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.secondsBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.secondsBox.ForeColor = System.Drawing.Color.White;
+            this.secondsBox.FormattingEnabled = true;
+            this.secondsBox.IntegralHeight = false;
+            this.secondsBox.ItemHeight = 21;
+            this.secondsBox.Location = new System.Drawing.Point(275, 73);
+            this.secondsBox.Name = "secondsBox";
+            this.secondsBox.Size = new System.Drawing.Size(74, 29);
+            this.secondsBox.TabIndex = 4;
+            // 
+            // minutesBox
+            // 
+            this.minutesBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(63)))), ((int)(((byte)(72)))));
+            this.minutesBox.CausesValidation = false;
+            this.minutesBox.DropDownHeight = 160;
+            this.minutesBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.minutesBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minutesBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minutesBox.ForeColor = System.Drawing.Color.White;
+            this.minutesBox.FormattingEnabled = true;
+            this.minutesBox.IntegralHeight = false;
+            this.minutesBox.ItemHeight = 21;
+            this.minutesBox.Location = new System.Drawing.Point(155, 73);
+            this.minutesBox.Name = "minutesBox";
+            this.minutesBox.Size = new System.Drawing.Size(74, 29);
+            this.minutesBox.TabIndex = 3;
             // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(250, 164);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.ClientSize = new System.Drawing.Size(561, 276);
+            this.ControlBox = false;
+            this.Controls.Add(this.minutesBox);
+            this.Controls.Add(this.secondsBox);
+            this.Controls.Add(this.timeLabel);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.hoursBox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.secondsTextBox);
-            this.Controls.Add(this.minutesTextBox);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
-            this.Controls.Add(this.hoursTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -161,21 +174,19 @@
             this.Name = "Settings";
             this.Text = "Settings";
             this.TopMost = true;
-            this.Load += new System.EventHandler(this.Settings_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox hoursTextBox;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.TextBox minutesTextBox;
-        private System.Windows.Forms.TextBox secondsTextBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox hoursBox;
+        private System.Windows.Forms.Label timeLabel;
+        private System.Windows.Forms.ComboBox secondsBox;
+        private System.Windows.Forms.ComboBox minutesBox;
     }
 }

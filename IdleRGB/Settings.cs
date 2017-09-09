@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.IO;
+using System.Windows.Input;
 
 namespace IdleRGB
 {
@@ -12,26 +14,32 @@ namespace IdleRGB
         public Settings()
         {
             InitializeComponent();
-            showSettings();
+            ShowSettings();
         }
 
-        private void Settings_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        public void showSettings()
+        public void ShowSettings()
         {
             TimeSpan it = Properties.Settings.Default.idleTime;
 
-            hoursTextBox.Text = it.Hours.ToString();
-            minutesTextBox.Text = it.Minutes.ToString();
-            secondsTextBox.Text = it.Seconds.ToString();
+            InitializeComboBox(hoursBox, 24);
+            hoursBox.SelectedItem = it.Hours;
+
+            InitializeComboBox(minutesBox, 60);
+            minutesBox.SelectedItem = it.Minutes;
+
+            InitializeComboBox(secondsBox, 60);
+            secondsBox.SelectedItem = it.Seconds;
 
             Show();
         }
 
-        private void textBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void InitializeComboBox(ComboBox comboBox, int upperLimit)
+        {
+            for (int i = 0; i < upperLimit + 1; i++)
+                comboBox.Items.Add(i);
+        }
+
+        private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
@@ -39,20 +47,11 @@ namespace IdleRGB
             }
         }
 
-        private void saveButton_Click(object sender, EventArgs e)
+        private void SaveButton_Click(object sender, EventArgs e)
         {
-            int h;
-            int m;
-            int s;
-
-            h = m = s = 0;
-
-            if (hoursTextBox.Text != "")
-                h = Int32.Parse(hoursTextBox.Text);
-            if (minutesTextBox.Text != "")
-                m = Int32.Parse(minutesTextBox.Text);
-            if (secondsTextBox.Text != "")
-                s = Int32.Parse(secondsTextBox.Text);
+            int h = (int)hoursBox.SelectedItem;
+            int m = (int)minutesBox.SelectedItem;
+            int s = (int)secondsBox.SelectedItem;
 
             TimeSpan it = new TimeSpan(h, m, s);
 
@@ -68,7 +67,7 @@ namespace IdleRGB
             }
         }
 
-        private void cancelButton_Click(object sender, EventArgs e)
+        private void CancelButton_Click(object sender, EventArgs e)
         {
             Close();
         }

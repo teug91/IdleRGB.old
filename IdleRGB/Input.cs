@@ -32,25 +32,25 @@ namespace IdleRGB
             idleTime = Properties.Settings.Default.idleTime;
 
             keyboard = new KeyboardInput();
-            keyboard.KeyBoardKeyPressed += inputAction;
+            keyboard.KeyBoardKeyPressed += InputAction;
 
             mouse = new MouseInput();
-            mouse.MouseMoved += inputAction;
+            mouse.MouseMoved += InputAction;
 
             idle = new LedChanger();
 
             idleColor = Properties.Settings.Default.idleColor;
             capsColor = Properties.Settings.Default.capsColor;
 
-            initTimer();
+            InitTimer();
         }
 
         /// <summary>
         /// Updates last input and deactivates idle.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void inputAction(object sender, EventArgs e)
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        void InputAction(object sender, EventArgs e)
         {
             bool capsToggled = Keyboard.IsKeyToggled(Key.CapsLock);
 
@@ -59,13 +59,13 @@ namespace IdleRGB
             {
                 if (capsToggled)
                 {
-                    idle.changeLeds(capsColor);
+                    idle.ChangeLeds(capsColor);
                     inCaps = true;
                 }
 
                 else
                 {
-                    idle.resetLeds();
+                    idle.ResetLeds();
                 }
 
                 inIdle = false;
@@ -73,13 +73,13 @@ namespace IdleRGB
 
             else if(!capsToggled && inCaps)
             {
-                idle.resetLeds();
+                idle.ResetLeds();
                 inCaps = false;
             }
 
             else if(capsToggled && !inCaps)
             {
-                idle.changeLeds(capsColor);
+                idle.ChangeLeds(capsColor);
                 inCaps = true;
             }
 
@@ -90,16 +90,16 @@ namespace IdleRGB
         /// <summary>
         /// Checks if enough time without input has passed.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void timer1_Tick(object sender, ElapsedEventArgs e)
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Timers.ElapsedEventArgs"/> instance containing the event data.</param>
+        void Timer1_Tick(object sender, ElapsedEventArgs e)
         {
             if (!inIdle)
             {
                 // Checks if enough time has passed to put in idle
                 if (DateTime.Now.Subtract(lastInput) > idleTime)
                 {
-                    idle.changeLeds(idleColor);
+                    idle.ChangeLeds(idleColor);
                     inIdle = true;
                 }
             }
@@ -108,11 +108,11 @@ namespace IdleRGB
         /// <summary>
         /// Initiates timer.
         /// </summary>
-        void initTimer()
+        void InitTimer()
         {
             System.Timers.Timer timer1;
             timer1 = new System.Timers.Timer();
-            timer1.Elapsed += timer1_Tick;
+            timer1.Elapsed += Timer1_Tick;
             timer1.Interval = 1000;
             timer1.Enabled = true;
             GC.KeepAlive(timer1);
